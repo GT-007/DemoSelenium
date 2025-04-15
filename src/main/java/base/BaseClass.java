@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class BaseClass {
   @Test
-  public void f() {
+  public void base() {
 	  
 	  //use this to launch browser
   }
