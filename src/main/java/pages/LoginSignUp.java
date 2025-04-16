@@ -30,7 +30,7 @@ public class LoginSignUp {
 	private WebElement btn_signUp;
 	
 	//****** class constructor *********
-	LoginSignUp(WebDriver driver1)
+	public LoginSignUp(WebDriver driver1)
 	{
 		driver = driver1;
 		PageFactory.initElements(driver, this);	
