@@ -4,6 +4,7 @@ package testSuit;
 import org.testng.annotations.Test;
 
 import base.BaseClass;
+import pages.Home;
 import pages.LoginSignUp;
 import pages.Product;
 
@@ -14,7 +15,8 @@ public class TC04_SearchProducts extends BaseClass{
 	  System.out.println("TC04_SearchProducts : Start");
 	  LoginSignUp ObjLogin = new LoginSignUp(driver);
 	  ObjLogin.fun_login("gauravmanral0@gmail.com", "She@Steria987");
-	  ObjLogin.fun_VerifyLogin();
+	  Home objhome = new Home(driver);
+	  objhome.fun_LoggedInHomePgPresent();
 	  Product objproducts = new Product(driver);
 	  objproducts.SearchItems("premium polo");
 	  objproducts.verifyProductResult();
