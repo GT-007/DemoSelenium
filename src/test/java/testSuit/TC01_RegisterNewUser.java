@@ -9,6 +9,7 @@ import base.BaseClass;
 import pages.*;
 import utils.ReportLogger;
 
+
 public class TC01_RegisterNewUser extends BaseClass {
 	@Test
 	public void test() {

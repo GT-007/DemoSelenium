@@ -17,7 +17,7 @@ public class Home {
 	@FindBy(xpath = "//a[@href='/logout']")
 	private WebElement lnk_logout;
 
-	Home(WebDriver driver1)
+	public Home(WebDriver driver1)
 	{
 		driver = driver1;
 		PageFactory.initElements(driver, this);
