@@ -2,27 +2,38 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-04-16T14:55:43 IST" name="Default suite" finished-at="2025-04-16T14:55:58 IST" duration-ms="15253">
+  <suite started-at="2025-04-18T17:20:28 IST" name="Default suite" finished-at="2025-04-18T17:20:41 IST" duration-ms="13695">
     <groups>
     </groups>
-    <test started-at="2025-04-16T14:55:43 IST" name="Default test" finished-at="2025-04-16T14:55:58 IST" duration-ms="15253">
+    <test started-at="2025-04-18T17:20:28 IST" name="Default test" finished-at="2025-04-18T17:20:41 IST" duration-ms="13695">
       <class name="testSuit.TC01_RegisterNewUser">
-        <test-method is-config="true" signature="fun_loadConfig()[pri:0, instance:testSuit.TC01_RegisterNewUser@63475ace]" started-at="2025-04-16T14:55:43 IST" name="fun_loadConfig" finished-at="2025-04-16T14:55:43 IST" duration-ms="27" status="PASS">
+        <test-method is-config="true" signature="fun_loadConfig()[pri:0, instance:testSuit.TC01_RegisterNewUser@4e50c791]" started-at="2025-04-18T17:20:27 IST" name="fun_loadConfig" finished-at="2025-04-18T17:20:28 IST" duration-ms="195" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fun_loadConfig -->
-        <test-method is-config="true" signature="fun_setUp()[pri:0, instance:testSuit.TC01_RegisterNewUser@63475ace]" started-at="2025-04-16T14:55:43 IST" name="fun_setUp" finished-at="2025-04-16T14:55:52 IST" duration-ms="8637" status="PASS">
+        <test-method is-config="true" signature="fun_setUp(java.lang.reflect.Method)[pri:0, instance:testSuit.TC01_RegisterNewUser@4e50c791]" started-at="2025-04-18T17:20:28 IST" name="fun_setUp" finished-at="2025-04-18T17:20:35 IST" duration-ms="7758" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void testSuit.TC01_RegisterNewUser.test()]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fun_setUp -->
-        <test-method signature="test()[pri:0, instance:testSuit.TC01_RegisterNewUser@63475ace]" started-at="2025-04-16T14:55:52 IST" name="test" finished-at="2025-04-16T14:55:58 IST" duration-ms="6457" status="PASS">
+        <test-method signature="test()[pri:0, instance:testSuit.TC01_RegisterNewUser@4e50c791]" started-at="2025-04-18T17:20:35 IST" name="test" finished-at="2025-04-18T17:20:41 IST" duration-ms="5409" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
-        <test-method is-config="true" signature="fun_tearDown()[pri:0, instance:testSuit.TC01_RegisterNewUser@63475ace]" started-at="2025-04-16T14:55:58 IST" name="fun_tearDown" finished-at="2025-04-16T14:55:58 IST" duration-ms="126" status="PASS">
+        <test-method is-config="true" signature="fun_tearDown()[pri:0, instance:testSuit.TC01_RegisterNewUser@4e50c791]" started-at="2025-04-18T17:20:41 IST" name="fun_tearDown" finished-at="2025-04-18T17:20:41 IST" duration-ms="504" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- fun_tearDown -->
+        <test-method is-config="true" signature="fun_suitPostReq()[pri:0, instance:testSuit.TC01_RegisterNewUser@4e50c791]" started-at="2025-04-18T17:20:41 IST" name="fun_suitPostReq" finished-at="2025-04-18T17:20:42 IST" duration-ms="263" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fun_suitPostReq -->
       </class> <!-- testSuit.TC01_RegisterNewUser -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
