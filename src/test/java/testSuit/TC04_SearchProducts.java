@@ -24,6 +24,7 @@ public class TC04_SearchProducts extends BaseClass{
 	  objproducts.SearchItems("premium polo");
 	  objproducts.verifyProductResult();
 	  System.out.println("TC04_SearchProducts : End"); 
+	  System.out.println("TC04_SearchProducts : End"); 
 	
   }
 }
