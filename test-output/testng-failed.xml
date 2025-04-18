@@ -3,14 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testSuit.TC01_RegisterNewUser">
+      <class name="testSuit.TC04_SearchProducts">
         <methods>
           <include name="fun_loadConfig"/>
           <include name="fun_tearDown"/>
-          <include name="test"/>
           <include name="fun_setUp"/>
+          <include name="SerachProducts"/>
         </methods>
-      </class> <!-- testSuit.TC01_RegisterNewUser -->
+      </class> <!-- testSuit.TC04_SearchProducts -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

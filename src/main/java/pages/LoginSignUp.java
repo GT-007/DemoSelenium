@@ -26,6 +26,11 @@ public class LoginSignUp {
 	@FindBy(xpath = "//input[@data-qa='signup-name']")
 	private WebElement txt_name;
 	
+	@FindBy(xpath = "//a[normalize-space()='Logout']")
+	private WebElement btn_Logout;
+	
+	
+	
 	@FindBy(xpath = "//button[@data-qa='signup-button']")
 	private WebElement btn_signUp;
 	
@@ -58,4 +63,13 @@ public class LoginSignUp {
 			
 		System.out.println("fun_SignUp : End");
 	}
+	
+	 public  void fun_VerifyLogin() {
+	        
+	        if (btn_Logout.isDisplayed()) {
+	            System.out.println("Login Succesfully Done");
+	        } else {
+	            System.out.println("Login is Not Done Succesfully");
+	        }
+	    }
 }

@@ -13,7 +13,7 @@ public class TC01_RegisterNewUser extends BaseClass{
 	  System.out.println("TC01_RegisterNewUser : Start");
 	  
 	  LoginSignUp signUp = new LoginSignUp(driver);
-	  signUp.fun_SignUp("gauravmanral0r5@gmail.com", "Gaurav Manral");
+	  signUp.fun_SignUp("gauravmanral0@gmail.com", "Gaurav Manral");
 	  
 	  Registration register = new Registration(driver);
 	  Assert.assertEquals(register.fun_registerationPgDisplayed(),true);
