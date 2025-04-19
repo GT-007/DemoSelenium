@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="BatchExecution" verbose="1">
+    <test name="UserFlowTests" preserve-order="true">
+        <classes>
+            <class name="testSuit.TC01_RegisterNewUser"/>
+            <class name="testSuit.TC02_UserLoginAndLogout"/>
+            <class name="testSuit.TC03_CreateAndDelCreatedUser"/>
+            <class name="testSuit.TC04_SearchProducts"/>      
+        </classes>
+    </test>
+</suite>

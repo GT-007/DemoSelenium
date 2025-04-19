@@ -25,43 +25,47 @@ import utils.ReportLogger;
 
 public class BaseClass {
 	
-	public WebDriver driver;
-	public Properties prop;
-    public ExtentReports extent;
-    public ExtentTest test;	
-    String strTestName = this.getClass().getSimpleName();
+	public WebDriver objDriver;
+	public Properties objProp;
+    public ExtentReports objExtentSummaryReport, objExtentIndiviualReport;
+    public ExtentTest objExtentSummaryTest, objExtentIndividualTest;
     
-	@BeforeSuite
-	public void fun_loadConfig()
-	{
-		//String strTestName = this.getClass().getSimpleName();
-		extent = ExtentManager.getInstance(strTestName);
+    String strTestName = this.getClass().getSimpleName();
+    String strExecutionSummary =  "ExecutionSummary";
+    
+	
+	@BeforeMethod
+	public void fun_setUp(Method method) {
+	
 		
-		prop = new Properties();
+		//Load data from properties file
+		objProp = new Properties();
 		try {		
 			FileInputStream fis = new FileInputStream("src/test/resources/globalVars.properties");
-			prop.load(fis);
+			objProp.load(fis);
 		}
 		catch(IOException e)
 		{
 			e.printStackTrace();
 		}
-	}
-	
-	@BeforeMethod
-	public void fun_setUp(Method method) {
-	  
-		test = extent.createTest(strTestName);
-        
-		String strBrowserType = prop.getProperty("browserType");
+
+		//Create report summary and individual test report object		
+		objExtentSummaryReport = ExtentManager.fun_getSummaryReportInstance(strExecutionSummary,objProp.getProperty("browserType"));
+		objExtentIndiviualReport = ExtentManager.fun_getIndividualReportInstance(strTestName);
+		
+		objExtentSummaryTest = objExtentSummaryReport.createTest(strTestName);
+		objExtentIndividualTest = objExtentIndiviualReport.createTest(strTestName);
+
+		//Fetch which browser to use for testing
+		String strBrowserType = objProp.getProperty("browserType");
 		
 		if (strBrowserType.equalsIgnoreCase("CHROME"))
 		{
-			driver = new ChromeDriver();
+			objDriver = new ChromeDriver();
 		}
 		else if (strBrowserType.equalsIgnoreCase("EDGE"))
 		{
-			driver = new EdgeDriver();
+			objDriver = new EdgeDriver();
 		}
 		else
 		{
@@ -69,33 +73,41 @@ public class BaseClass {
 			System.exit(1);	
 		}
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().window().maximize();
-        driver.get(prop.getProperty("appUrl"));
+		objDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		objDriver.manage().window().maximize();
+		objDriver.get(objProp.getProperty("appUrl"));
         
-        //Start report
-        ReportLogger.fun_logForStartAndEndScreenshot(driver, test, Status.INFO, "Test Start ");
 		
-	  //use this to launch browser
+        //Start test case report for individual test report
+        ReportLogger.fun_logForStartAndEndScreenshot(objDriver, objExtentIndividualTest, Status.INFO, "Test Started ");
+ 
   }
 	
 	@AfterMethod
-	public void fun_tearDown()
+	public void fun_tearDown(ITestResult result)
 	{
 		
-		 ReportLogger.fun_logForStartAndEndScreenshot(driver, test, Status.INFO, "Test Completed");
-		 
+		ReportLogger.fun_logForStartAndEndScreenshot(objDriver, objExtentIndividualTest, Status.INFO, "Test Completed");
+		
+        if (result.getStatus() == ITestResult.FAILURE)
+        	ReportLogger.fun_logForTestCaseStatus(objExtentSummaryTest, Status.FAIL, strTestName);
+        
+        else if (result.getStatus() == ITestResult.SUCCESS)
+        	ReportLogger.fun_logForTestCaseStatus(objExtentSummaryTest, Status.PASS, strTestName);
+        
+        else
+        	ReportLogger.fun_logForTestCaseStatus(objExtentSummaryTest, Status.SKIP, strTestName);
+        
+        
 	    // Always quit the browser
-	    if (driver != null) {
-	        driver.quit();
+	    if (objDriver != null) {	    	
+	    	objDriver.quit();    	
 	    }
+	    
+	    objExtentSummaryReport.flush();
+	    objExtentIndiviualReport.flush();
 	}
 	
-	@AfterSuite
-	public void fun_suitPostReq()
-	{
-		extent.flush();
-	}
 	
 	
 }
