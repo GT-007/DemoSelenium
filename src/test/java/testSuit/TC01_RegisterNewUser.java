@@ -1,24 +1,30 @@
 package testSuit;
 
-//import org.testng.Assert;
+import java.io.IOException;
+import java.util.HashMap;
+
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
 
 import base.BaseClass;
 import pages.*;
-import utils.ReportLogger;
+import utils.*;
 
 
 public class TC01_RegisterNewUser extends BaseClass {
+	
+	
 	@Test
 	public void test() {
 
 		LoginSignUp signUp = new LoginSignUp(objDriver);
-		signUp.fun_SignUp("gauravma0r5@gmail.com", "Gaurav Manral");
+		
+		signUp.fun_SignUp(MapTestData.get("Email"), MapTestData.get("UserName"));
 
 		Registration register = new Registration(objDriver);
-		// Assert.assertEquals(register.fun_registerationPgDisplayed(),true);
+
 		if (register.fun_registerationPgDisplayed()) {	
 			ReportLogger.fun_logWithStepNoAndScreenshot(objDriver, objExtentIndividualTest, Status.PASS, 1, 
 					"Registeration page displayed");
@@ -28,6 +34,8 @@ public class TC01_RegisterNewUser extends BaseClass {
 		}
 
 		/* register.fun_fillDetailAndClickSubmit("Gaurav Manral", "She@Steria987"); */
+		
+		
 
 	}
 }

@@ -4,6 +4,8 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.WebDriver;
@@ -20,6 +22,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 
 import utils.ExtentManager;
+import utils.LoadTestData;
 import utils.ReportLogger;
 
 
@@ -29,6 +32,8 @@ public class BaseClass {
 	public Properties objProp;
     public ExtentReports objExtentSummaryReport, objExtentIndiviualReport;
     public ExtentTest objExtentSummaryTest, objExtentIndividualTest;
+   
+    public Map<String, String> MapTestData = new HashMap<>();
     
     String strTestName = this.getClass().getSimpleName();
     String strExecutionSummary =  "ExecutionSummary";
@@ -80,7 +85,15 @@ public class BaseClass {
 		
         //Start test case report for individual test report
         ReportLogger.fun_logForStartAndEndScreenshot(objDriver, objExtentIndividualTest, Status.INFO, "Test Started ");
- 
+        
+        //load test data
+        try {
+        	MapTestData = LoadTestData.fun_fetchTestData("src/test/resources/TestData.xlsx", 
+        						"AutomationExercise", strTestName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
   }
 	
 	@AfterMethod
