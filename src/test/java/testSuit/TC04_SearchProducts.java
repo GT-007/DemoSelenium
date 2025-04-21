@@ -22,8 +22,8 @@ public class TC04_SearchProducts extends BaseClass{
 	  objhome.fun_LoggedInHomePgPresent();
 	  Product objproducts = new Product(objDriver);
 	  objproducts.SearchItems("premium polo");
-	  ReportLogger.fun_logWithStepNoAndScreenshot(objDriver, objExtentIndividualTest, Status.PASS, 1, "Registeration page displayed");	  
-	  ReportLogger.fun_logWithStepNoAndScreenshot(objDriver, objExtentIndividualTest, Status.FAIL, 1, "Checking reporting");
+	  ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.PASS, 1, "Registeration page displayed");	  
+	  ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.FAIL, 1, "Checking reporting");
 	  objproducts.verifyProductResult();
 	  System.out.println("TC04_SearchProducts : End"); 
 	  System.out.println("TC04_SearchProducts : End"); 

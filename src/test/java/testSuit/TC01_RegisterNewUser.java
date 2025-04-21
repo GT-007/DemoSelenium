@@ -1,9 +1,6 @@
 package testSuit;
 
-import java.io.IOException;
-import java.util.HashMap;
 
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -17,23 +14,36 @@ public class TC01_RegisterNewUser extends BaseClass {
 	
 	
 	@Test
-	public void test() {
+	public void registerNewUser() {
 
 		LoginSignUp signUp = new LoginSignUp(objDriver);
 		
+		//*****************************************************************************************
+		ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.INFO, 1, 
+				"Enter Email and Username for Registration");
+		
 		signUp.fun_SignUp(MapTestData.get("Email"), MapTestData.get("UserName"));
 
+		//*****************************************************************************************
+
+		ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.INFO, 2, 
+				"Validating for Registration page");
+		
 		Registration register = new Registration(objDriver);
 
 		if (register.fun_registerationPgDisplayed()) {	
-			ReportLogger.fun_logWithStepNoAndScreenshot(objDriver, objExtentIndividualTest, Status.PASS, 1, 
+			ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.PASS, 3, 
 					"Registeration page displayed");
 		} else {
-			ReportLogger.fun_logWithStepNoAndScreenshot(objDriver, objExtentIndividualTest, Status.FAIL, 1,
+			ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.FAIL, 3,
 					"Registeration page not displayed");			
 		}
+		//****************************************************************************************
 
-		/* register.fun_fillDetailAndClickSubmit("Gaurav Manral", "She@Steria987"); */
+		ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.INFO, 4, 
+				"Register new user");
+		
+		//register.fun_fillDetailAndClickSubmit("Gaurav Manral", "She@Steria987");
 		
 		
 

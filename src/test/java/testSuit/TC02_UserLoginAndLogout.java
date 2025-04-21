@@ -11,6 +11,6 @@ public class TC02_UserLoginAndLogout extends BaseClass{
   @Test
   public void f() {
 	  
-	  ReportLogger.fun_logWithStepNoAndScreenshot(objDriver, objExtentIndividualTest, Status.PASS, 1, "Registeration page displayed");
+	  ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.PASS, 1, "Registeration page displayed");
   }
 }

@@ -11,7 +11,7 @@ import com.aventstack.extentreports.Status;
 
 public class ReportLogger {
 	   
-	public static void fun_logWithStepNoAndScreenshot(WebDriver driver, ExtentTest test, Status status, int intStepNo,
+	public static void fun_logStepInReport(WebDriver driver, ExtentTest test, Status status, int intStepNo,
 			String message) {
 		
 		String strBase64ScreenSht = Screenshot.captureScreenshot(driver);
