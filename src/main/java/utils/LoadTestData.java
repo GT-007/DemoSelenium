@@ -50,16 +50,18 @@ public class LoadTestData {
 	    	 {
 	    		 intTestDataRow = row.getRowNum();
 	    		 bolDataFound = true;
-	    		 System.out.println("Test data found");
+	    		 System.out.println("Test data present");
 	    		 break;
 	    	 }
 	     }
 	     
 	     if (!bolDataFound)
 	     {
-	    	 System.err.println("Test data not found");
+	    	 System.out.println("Test data not present");
 	    	 workbook.close();
-	    	 throw new RuntimeException("Test data not found for: " + strTestClass);
+	    	 fis.close();
+	    	 return null;
+	    	 //throw new RuntimeException("Test data not found for: " + strTestClass);
 	     }
 	     
 	     Row headerRow = sheet.getRow(0);

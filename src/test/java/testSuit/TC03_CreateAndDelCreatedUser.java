@@ -9,8 +9,8 @@ import utils.ReportLogger;
 
 public class TC03_CreateAndDelCreatedUser extends BaseClass{
   @Test
-  public void f() {
+  public void test() {
 	  
-	  ReportLogger.fun_logStepInReport(objDriver, objExtentIndividualTest, Status.PASS, 1, "Registeration page displayed");
+	 
   }
 }

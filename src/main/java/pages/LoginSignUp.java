@@ -58,4 +58,15 @@ public class LoginSignUp {
 			
 		System.out.println("fun_SignUp : End");
 	}
+	
+	public Boolean fun_loginSignUpPgPresent()
+	{
+		
+		if (btn_loginIn.isDisplayed())
+			return true;
+		else
+			return false;
+		
+		
+	}
 }

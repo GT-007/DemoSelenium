@@ -11,12 +11,21 @@ import com.aventstack.extentreports.Status;
 
 public class ReportLogger {
 	   
-	public static void fun_logStepInReport(WebDriver driver, ExtentTest test, Status status, int intStepNo,
+	public static void fun_logInfoStepInReport(WebDriver driver, ExtentTest test, int intStepNo,
 			String message) {
 		
 		String strBase64ScreenSht = Screenshot.captureScreenshot(driver);
 
-		test.log(status, "Step - " + intStepNo + " : " + message,
+		test.log(Status.INFO, "Step - " + intStepNo + " : " + message,
+				MediaEntityBuilder.createScreenCaptureFromBase64String(strBase64ScreenSht).build());
+	}
+
+	public static void fun_logStatusStepInReport(WebDriver driver, ExtentTest test, Status status ,
+			String message) {
+		
+		String strBase64ScreenSht = Screenshot.captureScreenshot(driver);
+
+		test.log(status, message,
 				MediaEntityBuilder.createScreenCaptureFromBase64String(strBase64ScreenSht).build());
 		
 		if (status.equals(Status.FAIL))
@@ -25,7 +34,7 @@ public class ReportLogger {
 		}
 
 	}
-
+	
 	public static void fun_logForStartAndEndScreenshot(WebDriver driver, ExtentTest test, Status status,
 			String message) {
 		String strBase64ScreenSht = Screenshot.captureScreenshot(driver);

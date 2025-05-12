@@ -7,7 +7,7 @@
 
     <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
     <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -21,12 +21,11 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-BatchExecution" class="navigator-link">
-              <span class="suite-name border-failed">BatchExecution</span>
+              <span class="suite-name border-passed">BatchExecution</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -51,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-BatchExecution" class="navigator-link ">
-                    <span>C:\SeleniumProjects\Rachin\batchExecution.xml</span>
+                    <span>C:\Selenium Projects\batchExecution.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -93,21 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods, 1 failed,   3 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-BatchExecution" class="hide-methods failed suite-BatchExecution"> (hide)</a> <!-- hide-methods failed suite-BatchExecution -->
-                      <a href="#" panel-name="suite-BatchExecution" class="show-methods failed suite-BatchExecution"> (show)</a> <!-- show-methods failed suite-BatchExecution -->
-                    </span>
-                    <div class="method-list-content failed suite-BatchExecution">
-                      <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BatchExecution" title="testSuit.TC04_SearchProducts" class="method navigator-link" hash-for-method="SerachProducts">SerachProducts</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-BatchExecution -->
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -118,17 +103,12 @@
                     <div class="method-list-content passed suite-BatchExecution">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BatchExecution" title="testSuit.TC02_UserLoginAndLogout" class="method navigator-link" hash-for-method="f">f</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BatchExecution" title="testSuit.TC02_UserLoginAndLogout" class="method navigator-link" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BatchExecution" title="testSuit.TC03_CreateAndDelCreatedUser" class="method navigator-link" hash-for-method="f">f</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BatchExecution" title="testSuit.TC01_RegisterNewUser" class="method navigator-link" hash-for-method="registerNewUser">registerNewUser</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-BatchExecution" title="testSuit.TC01_RegisterNewUser" class="method navigator-link" hash-for-method="test">test</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-BatchExecution -->
@@ -143,57 +123,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-BatchExecution" class="panel BatchExecution">
-          <div class="suite-BatchExecution-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">testSuit.TC04_SearchProducts</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="SerachProducts">
-                  </a> <!-- SerachProducts -->
-                  <span class="method-name">SerachProducts</span>
-                  <div class="stack-trace">java.lang.AssertionError: null
-	at utils.ReportLogger.fun_logStepInReport(ReportLogger.java:24)
-	at testSuit.TC04_SearchProducts.SerachProducts(TC04_SearchProducts.java:26)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-... Removed 29 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BatchExecution-class-failed -->
-          <div class="suite-BatchExecution-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testSuit.TC02_UserLoginAndLogout</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="f">
-                  </a> <!-- f -->
-                  <span class="method-name">f</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BatchExecution-class-passed -->
-          <div class="suite-BatchExecution-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">testSuit.TC03_CreateAndDelCreatedUser</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="f">
-                  </a> <!-- f -->
-                  <span class="method-name">f</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BatchExecution-class-passed -->
           <div class="suite-BatchExecution-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -202,9 +131,24 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="registerNewUser">
-                  </a> <!-- registerNewUser -->
-                  <span class="method-name">registerNewUser</span>
+                  <a name="test">
+                  </a> <!-- test -->
+                  <span class="method-name">test</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-BatchExecution-class-passed -->
+          <div class="suite-BatchExecution-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">testSuit.TC02_UserLoginAndLogout</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="test">
+                  </a> <!-- test -->
+                  <span class="method-name">test</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -212,7 +156,7 @@
         </div> <!-- panel BatchExecution -->
         <div panel-name="test-xml-BatchExecution" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\SeleniumProjects\Rachin\batchExecution.xml</span>
+            <span class="header-content">C:\Selenium Projects\batchExecution.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -223,8 +167,6 @@
     &lt;classes&gt;
       &lt;class name=&quot;testSuit.TC01_RegisterNewUser&quot;/&gt;
       &lt;class name=&quot;testSuit.TC02_UserLoginAndLogout&quot;/&gt;
-      &lt;class name=&quot;testSuit.TC03_CreateAndDelCreatedUser&quot;/&gt;
-      &lt;class name=&quot;testSuit.TC04_SearchProducts&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- UserFlowTests --&gt;
 &lt;/suite&gt; &lt;!-- BatchExecution --&gt;
@@ -238,7 +180,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">UserFlowTests (4 classes)</span>
+                <span class="test-name">UserFlowTests (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -264,28 +206,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'SerachProducts')
-data.setCell(0, 2, 'testSuit.TC04_SearchProducts')
-data.setCell(0, 3, 16221);
+data.setCell(0, 1, 'test')
+data.setCell(0, 2, 'testSuit.TC01_RegisterNewUser')
+data.setCell(0, 3, 26827);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'registerNewUser')
-data.setCell(1, 2, 'testSuit.TC01_RegisterNewUser')
-data.setCell(1, 3, 2811);
-data.setCell(2, 0, 2)
-data.setCell(2, 1, 'f')
-data.setCell(2, 2, 'testSuit.TC02_UserLoginAndLogout')
-data.setCell(2, 3, 174);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'f')
-data.setCell(3, 2, 'testSuit.TC03_CreateAndDelCreatedUser')
-data.setCell(3, 3, 159);
+data.setCell(1, 1, 'test')
+data.setCell(1, 2, 'testSuit.TC02_UserLoginAndLogout')
+data.setCell(1, 3, 6477);
 window.suiteTableData['BatchExecution']= { tableData: data, tableDiv: 'times-div-BatchExecution'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 19 seconds</span>
+              <span class="suite-total-time">Total running time: 33 seconds</span>
               <div id="times-div-BatchExecution">
               </div> <!-- times-div-BatchExecution -->
             </div> <!-- times-div -->
@@ -300,9 +234,16 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-BatchExecution" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">0 ignored methods</span>
+            <span class="header-content">1 ignored method</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">testSuit.TC02_UserLoginAndLogout</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">fun_testPreReq</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-BatchExecution" class="panel">
@@ -312,64 +253,36 @@ return data;
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
               <div class="chronological-class-name">testSuit.TC01_RegisterNewUser</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">fun_setUp(public void testSuit.TC01_RegisterNewUser.registerNewUser())</span>
+              <div class="configuration-suite before">
+                <span class="method-name">fun_testPreReq</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-suite before -->
+              <div class="configuration-method before">
+                <span class="method-name">fun_LauchBrowser(public void testSuit.TC01_RegisterNewUser.test())</span>
+                <span class="method-start">58 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">registerNewUser</span>
-                <span class="method-start">9407 ms</span>
+                <span class="method-name">test</span>
+                <span class="method-start">6740 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">fun_tearDown([TestResult name=registerNewUser status=SUCCESS method=TC01_RegisterNewUser.registerNewUser()[pri:0,...)</span>
-                <span class="method-start">12220 ms</span>
+                <span class="method-name">fun_tearDown([TestResult name=test status=SUCCESS method=TC01_RegisterNewUser.test()[pri:0, instance:testSuit.TC0...)</span>
+                <span class="method-start">33571 ms</span>
               </div> <!-- configuration-method after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">testSuit.TC02_UserLoginAndLogout</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
-                <span class="method-name">fun_setUp(public void testSuit.TC02_UserLoginAndLogout.f())</span>
-                <span class="method-start">13478 ms</span>
+                <span class="method-name">fun_LauchBrowser(public void testSuit.TC02_UserLoginAndLogout.test())</span>
+                <span class="method-start">35402 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">f</span>
-                <span class="method-start">36056 ms</span>
+                <span class="method-name">test</span>
+                <span class="method-start">40597 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
-                <span class="method-name">fun_tearDown([TestResult name=f status=SUCCESS method=TC02_UserLoginAndLogout.f()[pri:0, instance:testSuit.TC02_U...)</span>
-                <span class="method-start">36231 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">testSuit.TC03_CreateAndDelCreatedUser</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">fun_setUp(public void testSuit.TC03_CreateAndDelCreatedUser.f())</span>
-                <span class="method-start">36747 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <span class="method-name">f</span>
-                <span class="method-start">65429 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">fun_tearDown([TestResult name=f status=SUCCESS method=TC03_CreateAndDelCreatedUser.f()[pri:0, instance:testSuit.T...)</span>
-                <span class="method-start">65590 ms</span>
-              </div> <!-- configuration-method after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">testSuit.TC04_SearchProducts</div> <!-- chronological-class-name -->
-              <div class="configuration-method before">
-                <span class="method-name">fun_setUp(public void testSuit.TC04_SearchProducts.SerachProducts())</span>
-                <span class="method-start">66210 ms</span>
-              </div> <!-- configuration-method before -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">SerachProducts</span>
-                <span class="method-start">72112 ms</span>
-              </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">fun_tearDown([TestResult name=SerachProducts status=FAILURE method=TC04_SearchProducts.SerachProducts()[pri:0, in...)</span>
-                <span class="method-start">88337 ms</span>
+                <span class="method-name">fun_tearDown([TestResult name=test status=SUCCESS method=TC02_UserLoginAndLogout.test()[pri:0, instance:testSuit....)</span>
+                <span class="method-start">47075 ms</span>
               </div> <!-- configuration-method after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

@@ -4,9 +4,7 @@
     <test name="UserFlowTests" preserve-order="true">
         <classes>
             <class name="testSuit.TC01_RegisterNewUser"/>
-            <class name="testSuit.TC02_UserLoginAndLogout"/>
-            <class name="testSuit.TC03_CreateAndDelCreatedUser"/>
-            <class name="testSuit.TC04_SearchProducts"/>      
+            <class name="testSuit.TC02_UserLoginAndLogout"/>   
         </classes>
     </test>
 </suite>

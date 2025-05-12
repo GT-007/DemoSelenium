@@ -14,7 +14,6 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.BeforeMethod;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -31,18 +30,20 @@ public class BaseClass {
 	public WebDriver objDriver;
 	public Properties objProp;
     public ExtentReports objExtentSummaryReport, objExtentIndiviualReport;
-    public ExtentTest objExtentSummaryTest, objExtentIndividualTest;
+    public ExtentTest objExtentSummaryTest;
+	public ExtentTest objExtentIndividualTest;
    
     public Map<String, String> MapTestData = new HashMap<>();
     
-    String strTestName = this.getClass().getSimpleName();
+    String strTestName ;
     String strExecutionSummary =  "ExecutionSummary";
     
-	
-	@BeforeMethod
-	public void fun_setUp(Method method) {
-	
-		
+    
+    @BeforeSuite
+    public void fun_testPreReq()
+    {
+    	//strTestName = this.getClass().getSimpleName();
+    	
 		//Load data from properties file
 		objProp = new Properties();
 		try {		
@@ -54,6 +55,26 @@ public class BaseClass {
 			e.printStackTrace();
 		}
 
+
+    }
+	
+	@BeforeMethod
+	public void fun_LauchBrowser(Method method) {
+		
+    	//strTestName = this.getClass().getSimpleName();
+    	
+		//Load data from properties file
+		objProp = new Properties();
+		try {		
+			FileInputStream fis = new FileInputStream("src/test/resources/globalVars.properties");
+			objProp.load(fis);
+		}
+		catch(IOException e)
+		{
+			e.printStackTrace();
+		}
+		strTestName = method.getDeclaringClass().getSimpleName();
+		
 		//Create report summary and individual test report object		
 		objExtentSummaryReport = ExtentManager.fun_getSummaryReportInstance(strExecutionSummary,objProp.getProperty("browserType"));
 		objExtentIndiviualReport = ExtentManager.fun_getIndividualReportInstance(strTestName);
@@ -61,6 +82,18 @@ public class BaseClass {
 		objExtentSummaryTest = objExtentSummaryReport.createTest(strTestName);
 		objExtentIndividualTest = objExtentIndiviualReport.createTest(strTestName);
 
+        //Start test case report for individual test report
+        //ReportLogger.fun_logForStartAndEndScreenshot(objDriver, objExtentIndividualTest, Status.INFO, "Test Started ");
+        
+        //load test data
+        try {
+        	MapTestData = LoadTestData.fun_fetchTestData("src/test/resources/TestData.xlsx", 
+        						"AutomationExercise", strTestName);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
 		//Fetch which browser to use for testing
 		String strBrowserType = objProp.getProperty("browserType");
 		
@@ -82,24 +115,11 @@ public class BaseClass {
 		objDriver.manage().window().maximize();
 		objDriver.get(objProp.getProperty("appUrl"));
         
-		
-        //Start test case report for individual test report
-        ReportLogger.fun_logForStartAndEndScreenshot(objDriver, objExtentIndividualTest, Status.INFO, "Test Started ");
-        
-        //load test data
-        try {
-        	MapTestData = LoadTestData.fun_fetchTestData("src/test/resources/TestData.xlsx", 
-        						"AutomationExercise", strTestName);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
   }
 	
 	@AfterMethod
 	public void fun_tearDown(ITestResult result)
 	{
-		
 		ReportLogger.fun_logForStartAndEndScreenshot(objDriver, objExtentIndividualTest, Status.INFO, "Test Completed");
 		
         if (result.getStatus() == ITestResult.FAILURE)
@@ -111,15 +131,16 @@ public class BaseClass {
         else
         	ReportLogger.fun_logForTestCaseStatus(objExtentSummaryTest, Status.SKIP, strTestName);
         
-        
+	    objExtentSummaryReport.flush();
+	    objExtentIndiviualReport.flush();
+	    
 	    // Always quit the browser
 	    if (objDriver != null) {	    	
 	    	objDriver.quit();    	
 	    }
-	    
-	    objExtentSummaryReport.flush();
-	    objExtentIndiviualReport.flush();
+
 	}
+
 	
 	
 	
